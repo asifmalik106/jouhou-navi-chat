@@ -17,10 +17,10 @@ jobs:
       uses: actions/setup-python@v4
       with:
         python-version: '3.13'
-    
+
     - name: Install dependencies
       run: |
-        pip install -r requirements.txt -t package/
+        pip install -r requirements.txt -t package/ --platform manylinux2014_aarch64 --only-binary=:all:
         cp -r app package/
         cp lambda_handler.py package/
     
