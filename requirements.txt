@@ -1,4 +1,4 @@
-fastapi==0.104.1
-mangum==0.17.0
-pydantic==2.4.2
-typing-extensions==4.8.0
+fastapi
+mangum
+pydantic
+typing-extensions
