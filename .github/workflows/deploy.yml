@@ -47,11 +47,11 @@ jobs:
         aws lambda wait function-updated \
           --function-name ${{ secrets.JOUHOU_NAVI_AWS_LAMBDA }}
     
-    # - name: Run smoke test
-    #   run: |
-    #     RESPONSE=$(aws lambda invoke \
-    #       --function-name ${{ secrets.JOUHOU_NAVI_AWS_LAMBDA }} \
-    #       --payload '{"httpMethod":"GET","path":"/health"}' \
-    #       response.json)
-    #     cat response.json
-    #     grep -q "healthy" response.json
+    - name: Run smoke test
+      run: |
+        RESPONSE=$(aws lambda invoke \
+          --function-name ${{ secrets.JOUHOU_NAVI_AWS_LAMBDA }} \
+          --payload '{"httpMethod":"GET","path":"/health"}' \
+          response.json)
+        cat response.json
+        grep -q "healthy" response.json
